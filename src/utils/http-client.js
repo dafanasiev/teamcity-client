@@ -29,18 +29,21 @@ export default class HttpClient {
      * @param {String} apiPath
      * @param {String} method
      * @param {Object} addHeaders
+     * @param {String} responseType Result Type: buffer | stream | json
      * @returns {Promise<Buffer>}
      */
-    read (apiPath, method = 'GET', addHeaders = {}) {
+    read (apiPath, method = 'GET', addHeaders = {}, responseType = 'buffer') {
         const url = `${this.apiUrl}${apiPath}`;
         const headers = _.assign({}, addHeaders);
+        const responseTypeAxios = responseType_to_axiosResponseType(responseType);
         debug(`${method} ${url}`);
         debug(`headers: ${JSON.stringify(headers)}`);
+        debug(`responseType: ${responseTypeAxios}`);
         return axios({
             url,
             method,
             headers,
-            responseType: 'arraybuffer'
+            responseType: responseTypeAxios
         }).then(resp => resp.data);
     }
 
@@ -61,16 +64,19 @@ export default class HttpClient {
      * @param {String} apiPath
      * @param {*} body
      * @param {String} method
+     * @param {String} responseType Result Type: buffer | stream | json
      * @param {Object} [addHeaders]
      */
-    sendJSON (apiPath, body, method = 'POST', addHeaders = {}) {
+    sendJSON (apiPath, body, method = 'POST', addHeaders = {}, responseType = 'json') {
         const url = `${this.apiUrl}${apiPath}`;
         const headers = _.assign({'Content-Type': 'application/json'}, addHeaders, this.jsonHeader);
+        const responseTypeAxios = responseType_to_axiosResponseType(responseType);
         return axios({
             url,
             method,
             body,
-            headers
+            headers,
+            responseType: responseTypeAxios
         }).then(resp => toJSON(resp.data));
     }
 
@@ -149,4 +155,23 @@ function assertOptions(options) {
  */
 function toBase64(str) {
     return new Buffer(str).toString('base64');
+}
+
+const responseType_to_axiosResponseType_map = {
+    buffer: 'arraybuffer',
+    stream: 'stream',
+    json: 'json'
+};
+
+/**
+ * Map lib respnseType to axios responseType
+ * @param {String} responseType
+ * @returns {String}
+ */
+function responseType_to_axiosResponseType(responseType) {
+    const rv = responseType_to_axiosResponseType_map[responseType];
+    if (!rv) {
+        throw new Error(`Unsupported responseType [${responseType}]`);
+    }
+    return rv;
 }

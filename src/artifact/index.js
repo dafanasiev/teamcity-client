@@ -50,9 +50,10 @@ export default class Artifact {
      * @param {Object} locator
      * @param {String} path
      * @param {String} [wildcard]
-     * @returns {Promise<Stream>}
+     * @param {String} [responseType] Result Type: buffer (default if not set) | stream | json
+     * @returns {Promise<Buffer|Stream|Object>}
      */
-    archived (locator, path, wildcard) {
-        return this.httpClient.read(archivedUrl(locator, path, wildcard));
+    archived (locator, path, wildcard, responseType) {
+        return this.httpClient.read(archivedUrl(locator, path, wildcard), undefined, undefined, responseType);
     }
 }
