@@ -4,7 +4,7 @@
  * @overview Get build info by criteria
  */
 
-import {buildDetailUrl, buildListUrl} from './url';
+import {buildDetailUrl, buildListUrl, buildQueueUrl} from './url';
 
 export default class Build {
 
@@ -33,5 +33,15 @@ export default class Build {
      */
     list (locator, args) {
         return this.httpClient.readJSON(buildListUrl(locator, args));
+    }
+
+    /**
+     * Get buildQueue
+     * @param {Object|String|Number} locator
+     * @param {Object} args API http query arguments
+     * @returns {Promise.<Object>|*}
+     */
+    queue (locator, args) {
+        return this.httpClient.readJSON(buildQueueUrl(locator, args));
     }
 }

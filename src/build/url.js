@@ -47,3 +47,24 @@ export function buildListUrl(locatorObject = {}, args = undefined) {
     }
     return rv;
 }
+
+/**
+ * Get buildQueue url
+ * @see https://confluence.jetbrains.com/display/TCD9/REST+API#RESTAPI-BuildLocator
+ * @param {Object|String|Number|undefined} locatorObject
+ * @param {Object} args API http query arguments
+ * @returns {String}
+ */
+export function buildQueueUrl(locatorObject = {}, args = undefined) {
+    let rv = 'buildQueue/' ;
+    const locator = locatorToString(locatorObject);
+    if (locator) {
+        rv += `?locator=${locator}`;
+    }
+    if (args) {
+        const args_s = serializeParams(args);
+        rv += locator ? '&' : '?';
+        rv += args_s;
+    }
+    return rv;
+}
