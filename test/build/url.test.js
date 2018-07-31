@@ -2,7 +2,7 @@
  * @author https://github.com/acvetkov
  */
 
-import {buildDetailUrl, buildListUrl} from '../../src/build/url';
+import {buildDetailUrl, buildListUrl, buildQueueUrl} from '../../src/build/url';
 
 describe('buildDetailUrl', function () {
 
@@ -80,5 +80,33 @@ describe('buildListUrl', function () {
 
     it('should return list apiPath limited by count in query args', function () {
         assert.equal(buildListUrl(undefined, {count: 42}), 'builds/?count=42');
+    });
+});
+
+describe('buildQueueUrl', function () {
+
+    it('shouldnt return empty locator', function () {
+        assert.equal(buildQueueUrl({}), 'buildQueue/');
+        assert.equal(buildQueueUrl(), 'buildQueue/');
+    });
+
+    it('should return queue apiPath for build id', function () {
+        assert.equal(buildQueueUrl({buildType: {id: 'my-build-id'}}), 'buildQueue/?locator=buildType:(id:my-build-id)');
+    });
+
+    it('should return queue apiPath for build id with tags', function () {
+        assert.equal(buildQueueUrl({buildType: {id: 'my-build-id'}, tags: ['production']}),
+            'buildQueue/?locator=buildType:(id:my-build-id),tags:(production)'
+        );
+    });
+
+    it('should return queue apiPath for build id limited by count in query args', function () {
+        assert.equal(buildQueueUrl({buildType: {id: 'my-build-id'}},
+                                  {count: 42}),
+                                  'buildQueue/?locator=buildType:(id:my-build-id)&count=42');
+    });
+
+    it('should return queue apiPath limited by count in query args', function () {
+        assert.equal(buildQueueUrl(undefined, {count: 42}), 'buildQueue/?count=42');
     });
 });
