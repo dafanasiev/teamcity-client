@@ -2,7 +2,7 @@
  * @overview Get buildType info by criteria
  */
 
-import {buildTypeDetailUrl, buildTypeListUrl} from './url';
+import {buildTypeDetailUrl, buildTypeListUrl} from './url.js';
 
 export default class BuildType {
 

@@ -5,13 +5,13 @@
 
 import _ from 'lodash';
 
-import HttpClient from './utils/http-client';
-import Build from './build/index';
-import BuildType from './buildType/index';
-import Project from './project';
-import Artifact from './artifact/index';
-import Tags from './tags';
-import Changes from './changes';
+import HttpClient from './utils/http-client.js';
+import Build from './build/index.js';
+import BuildType from './buildType/index.js';
+import Project from './project/index.js';
+import Artifact from './artifact/index.js';
+import Tags from './tags/index.js';
+import Changes from './changes/index.js';
 
 export default class TeamcityClient {
 

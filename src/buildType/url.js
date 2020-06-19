@@ -2,7 +2,7 @@
  * @overview buildTypes urls helper
  */
 
-import {locatorToString} from '../utils/url';
+import {locatorToString} from '../utils/url.js';
 
 /**
  * Get detail buildType url

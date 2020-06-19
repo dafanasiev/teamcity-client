@@ -3,11 +3,12 @@
  * @overview setup tests
  */
 
-var chai = require('chai');
+import chai from 'chai';
+import sinon from 'sinon';
 
 global.assert = chai.assert;
-global.sinon = require('sinon');
+global.sinon = sinon;
 global.sinon.assert.expose(global.assert, {prefix: ''});
 
-var chaiAsPromised = require('chai-as-promised');
+import chaiAsPromised from 'chai-as-promised';
 chai.use(chaiAsPromised);

@@ -1,7 +1,7 @@
 
 import nock from 'nock';
-import Changes from '../../src/changes';
-import HttpClient from '../../src/utils/http-client';
+import Changes from '../../src/changes/index.js';
+import HttpClient from '../../src/utils/http-client.js';
 
 const tcHost = 'teamcity.net';
 

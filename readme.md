@@ -3,7 +3,7 @@
 ## Teamcity Node.js client
 
 ```js
-const TeamcityClient = require('teamcity-client');
+import TeamcityClient from 'teamcity-client';
 
 const api = new TeamcityClient({
     host: 'teamcity.domain.com',
@@ -12,7 +12,7 @@ const api = new TeamcityClient({
 });
 ```
 
-### builds
+### Examples
 
 Get detail info about build
 
@@ -55,10 +55,9 @@ You can use all [build locator](https://confluence.jetbrains.com/display/TCD9/RE
 **Download source**
 
 ```js
-const fs = require('q-io/fs');
 
 api.artifact.content(options, 'relative/path/to/source')
-   .then(blob => fs.write('data.zip', blob))
+   .then(blob => console.log(blob))
 ```
 
 **Get metadata**
@@ -113,7 +112,7 @@ Download zip with all js-files in directory `relative/path`
 
 ```js
 api.artifact.archived(options, 'relative/path', '**/*.js')
-   .then(blob => fs.write('data.zip', blob))
+   .then(blob => console.log(blob))
 ```
 
 ### tags

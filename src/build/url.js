@@ -3,7 +3,7 @@
  * @overview build urls helper
  */
 
-import {locatorToString, serializeParams} from '../utils/url';
+import {locatorToString, serializeParams} from '../utils/url.js';
 
 /**
  * Get detail build url

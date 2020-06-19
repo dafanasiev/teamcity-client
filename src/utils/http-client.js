@@ -8,7 +8,7 @@
 import _ from 'lodash';
 import createDebug from 'debug';
 import axios from 'axios';
-import {toJSON} from './index';
+import {toJSON} from './index.js';
 
 const GUEST_USER = 'guestAuth';
 const HTTP_USER = 'httpAuth';

@@ -2,7 +2,7 @@
  * @author https://github.com/acvetkov
  */
 
-import {contentUrl, metaUrl, childrenUrl, archivedUrl} from '../../src/artifact/url';
+import {contentUrl, metaUrl, childrenUrl, archivedUrl} from '../../src/artifact/url.js';
 
 const locator = {
     id: 'project-id'

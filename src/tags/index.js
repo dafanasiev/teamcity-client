@@ -3,7 +3,7 @@
  * @overview Work with build tags
  */
 
-import {tagsUrl, serializeTags} from './url';
+import {tagsUrl, serializeTags} from './url.js';
 
 export default class BuildTags {
 

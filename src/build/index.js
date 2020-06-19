@@ -4,7 +4,7 @@
  * @overview Get build info by criteria
  */
 
-import {buildDetailUrl, buildListUrl, buildQueueUrl} from './url';
+import {buildDetailUrl, buildListUrl, buildQueueUrl} from './url.js';
 
 export default class Build {
 

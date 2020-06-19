@@ -2,7 +2,7 @@
  * @author https://github.com/acvetkov
  */
 
-import {changesDetailUrl, changesListUrl} from '../../src/changes/url';
+import {changesDetailUrl, changesListUrl} from '../../src/changes/url.js';
 
 describe('changes/url', function () {
 

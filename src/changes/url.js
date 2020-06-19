@@ -3,7 +3,7 @@
  * @overview build urls helper
  */
 
-import {locatorToString} from '../utils/url';
+import {locatorToString} from '../utils/url.js';
 
 /**
  * Get url for changes list

@@ -2,7 +2,7 @@
  * @overview projects urls helper
  */
 
-import {locatorToString} from '../utils/url';
+import {locatorToString} from '../utils/url.js';
 
 /**
  * Get detail project url

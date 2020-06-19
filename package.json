@@ -8,14 +8,9 @@
     "url": "git@github.com:acvetkov/teamcity-client.git"
   },
   "scripts": {
-    "test": "mocha --recursive --compilers js:babel/register --require ./test/setup.js",
-    "code": "eslint ./src ./test && jscs ./src ./test --verbose",
-    "build": "npm run code && npm run test && npm run babel",
-    "babel": "npm run clean && babel ./src --out-dir ./out",
-    "clean": "rm -rf ./out/",
-    "prepublish": "npm run build",
-    "dev": "npm run clean && babel ./src --out-dir ./out --watch"
+    "test": "mocha --recursive --require ./test/setup.js"
   },
+  "type": "module",
   "keywords": [
     "teamcity",
     "api",
@@ -25,22 +20,15 @@
   "author": "Aleksey Tsvetkov <aleksey.dmitrich@gmail.com> (https://github.com/acvetkov)",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.17.1",
-    "debug": "^2.2.0",
-    "lodash": "^3.10.1",
-    "q": "^1.4.1",
-    "q-io": "^1.13.1"
+    "axios": "^0.19.2",
+    "debug": "^4.1.1",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "babel": "^5.8.34",
-    "babel-eslint": "^6.0.2",
-    "chai": "^3.4.1",
-    "chai-as-promised": "^5.1.0",
-    "eslint": "^2.7.0",
-    "eslint-plugin-babel": "^3.2.0",
-    "jscs": "^2.6.0",
-    "mocha": "^2.3.4",
-    "nock": "^8.0.0",
-    "sinon": "^1.17.2"
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^8.0.1",
+    "nock": "^12.0.3",
+    "sinon": "^9.0.1"
   }
 }

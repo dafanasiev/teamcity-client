@@ -4,7 +4,7 @@
  */
 
 import _ from 'lodash';
-import {locatorToString} from '../utils/url';
+import {locatorToString} from '../utils/url.js';
 
 /**
  * @param {Object} locatorObject

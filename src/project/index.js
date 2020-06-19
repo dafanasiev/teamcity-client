@@ -2,7 +2,7 @@
  * @overview Get project info by criteria
  */
 
-import {projectDetailUrl, projectListUrl} from './url';
+import {projectDetailUrl, projectListUrl} from './url.js';
 
 export default class Project {
 

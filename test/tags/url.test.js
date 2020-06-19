@@ -2,7 +2,7 @@
  * @author https://github.com/acvetkov
  */
 
-import {tagsUrl, tagsToObject} from '../../src/tags/url';
+import {tagsUrl, tagsToObject} from '../../src/tags/url.js';
 
 const locator = {
     id: 'project-id'

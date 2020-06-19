@@ -2,7 +2,7 @@
  * @author https://github.com/acvetkov
  */
 
-import {buildDetailUrl, buildListUrl, buildQueueUrl} from '../../src/build/url';
+import {buildDetailUrl, buildListUrl, buildQueueUrl} from '../../src/build/url.js';
 
 describe('buildDetailUrl', function () {
 

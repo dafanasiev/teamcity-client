@@ -2,7 +2,7 @@
  * @overview Working with changes
  */
 
-import {changesDetailUrl, changesListUrl} from './url';
+import {changesDetailUrl, changesListUrl} from './url.js';
 
 export default class Changes {
 

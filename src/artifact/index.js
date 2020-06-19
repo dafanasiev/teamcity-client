@@ -4,7 +4,7 @@
  * @overview Get artifact data by criteria
  */
 
-import {contentUrl, metaUrl, childrenUrl, archivedUrl} from './url';
+import {contentUrl, metaUrl, childrenUrl, archivedUrl} from './url.js';
 
 export default class Artifact {
 
