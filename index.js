@@ -1,1 +1,2 @@
-export * from 'src/index.js';
+import TeamcityClient from './src/index.js';
+export  default TeamcityClient;
